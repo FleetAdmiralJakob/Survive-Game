@@ -1,5 +1,10 @@
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
+let playerState = 'ko';
+const dropdown = document.getElementById('animations');
+dropdown.addEventListener('change', function(e){
+    playerState = e.target.value;
+})
 
 const CANVAS_WIDTH = canvas.width = 600;
 const CANVAS_HEIGHT = canvas.height = 600;
@@ -8,7 +13,6 @@ const playerImage = new Image();
 playerImage.src = 'shadow_dog.png';
 const spriteWidth = 575;
 const spriteHeight = 523;
-let playerState = 'ko';
 
 let gameFrame = 0;
 const staggerFrames = 5; //Here you can choose how fast the animation should be (low = fast, height = slow)
